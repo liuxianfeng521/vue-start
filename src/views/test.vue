@@ -1,13 +1,13 @@
 <template>
-    <div>
-      水水水水{{msg}}
-    </div>
+  <div>
+    水水水水{{ msg }}
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'test',
-  data () {
+  name: 'Test',
+  data() {
     return {
       msg: 'ssssss'
     }

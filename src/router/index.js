@@ -1,18 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+Vue.use(Router)
+
 /* Layout */
 import Layout from '@/layout'
 
 /* Router Modules */
-/*
-import componentsRouter from './modules/components'
+/* import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'
-*/
-
-Vue.use(Router)
+import nestedRouter from './modules/nested'*/
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -79,51 +77,51 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/login/index'),
+        component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
       }
     ]
-  }
+  },
   /* {
-   path: '/documentation',
-   component: Layout,
-   children: [
-     {
-       path: 'index',
-       component: () => import('@/views/documentation/index'),
-       name: 'Documentation',
-       meta: { title: 'Documentation', icon: 'documentation', affix: true }
-     }
-   ]
- },
- {
-   path: '/guide',
-   component: Layout,
-   redirect: '/guide/index',
-   children: [
-     {
-       path: 'index',
-       component: () => import('@/views/guide/index'),
-       name: 'Guide',
-       meta: { title: 'Guide', icon: 'guide', noCache: true }
-     }
-   ]
- },
- {
-   path: '/profile',
-   component: Layout,
-   redirect: '/profile/index',
-   hidden: true,
-   children: [
-     {
-       path: 'index',
-       component: () => import('@/views/profile/index'),
-       name: 'Profile',
-       meta: { title: 'Profile', icon: 'user', noCache: true }
-     }
-   ]
- }*/
+    path: '/documentation',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/documentation/index'),
+        name: 'Documentation',
+        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/guide',
+    component: Layout,
+    redirect: '/guide/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/guide/index'),
+        name: 'Guide',
+        meta: { title: 'Guide', icon: 'guide', noCache: true }
+      }
+    ]
+  },*/
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'Profile', icon: 'user', noCache: true }
+      }
+    ]
+  }
 ]
 
 /**
@@ -184,15 +182,15 @@ export const asyncRoutes = [
         meta: { title: 'Icons', icon: 'icon', noCache: true }
       }
     ]
-  },
+  },*/
 
-  /!** when your routing map is too long, you can split it into small modules **!/
-  /!* componentsRouter,
+  /** when your routing map is too long, you can split it into small modules **/
+  /*  componentsRouter,
   chartsRouter,
   nestedRouter,
-  tableRouter, *!/
+  tableRouter,*/
 
-  {
+  /* {
     path: '/example',
     component: Layout,
     redirect: '/example/list',
@@ -383,10 +381,10 @@ export const asyncRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },
+  },*/
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }*/
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
