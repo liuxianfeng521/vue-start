@@ -83,7 +83,7 @@ export const constantRoutes = [
       }
     ]
   },
-  /* {
+  {
     path: '/documentation',
     component: Layout,
     children: [
@@ -95,7 +95,7 @@ export const constantRoutes = [
       }
     ]
   },
-  {
+  /* {
     path: '/guide',
     component: Layout,
     redirect: '/guide/index',
