@@ -1,37 +1,125 @@
-# vue-start
 
-#### 介绍
-vue学习
+简介
+vue-start 是一个后台前端解决方案，它基于 vue 和 element-ui实现。它使用了最新的前端技术栈，内置了 i18n 国际化解决方案，动态路由，权限验证，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。相信不管你的需求是什么，本项目都能帮助到你。
+前序准备
 
-#### 软件架构
-软件架构说明
+你需要在本地安装 node 和 git。
+本项目技术栈基于 ES2015+、vue、vuex、vue-router 、vue-cli 、axios 和 element-ui，所有的请求数据都使用Mock.js进行模拟，提前了解和学习这些知识会对使用本项目有很大的帮助。
 
+同时配套了系列教程文章，如何从零构建后一个完整的后台项目，建议大家先看完这些文章再来实践本项目
 
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+手摸手，带你用 vue 撸后台 系列一(基础篇)
+手摸手，带你用 vue 撸后台 系列二(登录权限篇)
+手摸手，带你用 vue 撸后台 系列三 (实战篇)
+手摸手，带你用 vue 撸后台 系列四(vueAdmin 一个极简的后台基础模板)
+手摸手，带你用vue撸后台 系列五(v4.0新版本)
+手摸手，带你封装一个 vue component
+手摸手，带你优雅的使用 icon
+手摸手，带你用合理的姿势使用 webpack4（上）
+手摸手，带你用合理的姿势使用 webpack4（下）
+如有问题请先看上述使用文档和文章，若不能满足，欢迎 issue 和 pr
 
 
-#### 码云特技
+功能
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- 登录 / 注销
+
+- 权限验证
+  - 页面权限
+  - 指令权限
+  - 权限配置
+  - 二步登录
+
+- 多环境发布
+  - dev sit stage prod
+
+- 全局功能
+  - 国际化多语言
+  - 多种动态换肤
+  - 动态侧边栏（支持多级路由嵌套）
+  - 动态面包屑
+  - 快捷导航(标签页)
+  - Svg Sprite 图标
+  - 本地/后端 mock 数据
+  - Screenfull全屏
+  - 自适应收缩侧边栏
+
+- 编辑器
+  - 富文本
+  - Markdown
+  - JSON 等多格式
+
+- Excel
+  - 导出excel
+  - 导入excel
+  - 前端可视化excel
+  - 导出zip
+
+- 表格
+  - 动态表格
+  - 拖拽表格
+  - 内联编辑
+
+- 错误页面
+  - 401
+  - 404
+
+- 組件
+  - 头像上传
+  - 返回顶部
+  - 拖拽Dialog
+  - 拖拽Select
+  - 拖拽看板
+  - 列表拖拽
+  - SplitPane
+  - Dropzone
+  - Sticky
+  - CountTo
+
+- 综合实例
+- 错误日志
+- Dashboard
+- 引导页
+- ECharts 图表
+- Clipboard(剪贴复制)
+- Markdown2html
+开发
+
+# 克隆项目
+git clone https://github.com/PanJiaChen/vue-element-admin.git
+
+# 进入项目目录
+cd vue-start
+
+# 安装依赖
+npm install
+
+# 建议不要直接使用 cnpm 安装依赖，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
+npm install --registry=https://registry.npm.taobao.org
+
+# 启动服务
+npm run dev
+浏览器访问 http://localhost:9527
+
+发布
+
+# 构建测试环境
+npm run build:stage
+
+# 构建生产环境
+npm run build:prod
+其它
+
+# 预览发布环境效果
+npm run preview
+
+# 预览发布环境效果 + 静态资源分析
+npm run preview -- --report
+
+# 代码格式检查
+npm run lint
+
+# 代码格式检查并自动修复
+npm run lint -- --fix
+更多信息请参考 使用文档
+
