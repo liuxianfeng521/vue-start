@@ -1,10 +1,42 @@
 
-简介
-vue-start 是一个后台前端解决方案，它基于 vue 和 element-ui实现。它使用了最新的前端技术栈，内置了 i18n 国际化解决方案，动态路由，权限验证，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。相信不管你的需求是什么，本项目都能帮助到你。
-前序准备
 
-你需要在本地安装 node 和 git。
-本项目技术栈基于 ES2015+、vue、vuex、vue-router 、vue-cli 、axios 和 element-ui，所有的请求数据都使用Mock.js进行模拟，提前了解和学习这些知识会对使用本项目有很大的帮助。
+ vue  element-ui  Build Status  license  GitHub release  gitter  donate
+
+简体中文 | English | 日本語 | Spanish
+
+简介
+vue-element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现。它使用了最新的前端技术栈，内置了 i18n 国际化解决方案，动态路由，权限验证，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。相信不管你的需求是什么，本项目都能帮助到你。
+
+在线预览
+
+使用文档
+
+Gitter 讨论组
+
+Donate
+
+Wiki
+
+Gitee 在线预览（国内用户可访问该地址）
+
+国内访问文档 文档（方便没翻墙的用户查看）
+
+基础模板建议使用: vue-admin-template
+
+桌面端: electron-vue-admin
+
+Typescript 版: vue-typescript-admin-template (鸣谢: @Armour)
+
+v4.1.0+版本之后默认 master 分支将不支持国际化，有需要的请使用i18n分支，它会和 master 保持同步更新
+
+该项目不支持低版本浏览器(如 ie)，有需求请自行添加 polyfill 详情
+
+目前版本为 v4.0+ 基于 vue-cli 进行构建，若发现问题，欢迎提issue。若你想使用旧版本，可以切换分支到tag/3.11.0，它不依赖 vue-cli
+
+群主 圈子 群主会经常分享一些技术相关的东西，或者加入 qq 群 或者关注 微博
+
+前序准备
+你需要在本地安装 node 和 git。本项目技术栈基于 ES2015+、vue、vuex、vue-router 、vue-cli 、axios 和 element-ui，所有的请求数据都使用Mock.js进行模拟，提前了解和学习这些知识会对使用本项目有很大的帮助。
 
 同时配套了系列教程文章，如何从零构建后一个完整的后台项目，建议大家先看完这些文章再来实践本项目
 
@@ -20,8 +52,15 @@ vue-start 是一个后台前端解决方案，它基于 vue 和 element-ui实现
 如有问题请先看上述使用文档和文章，若不能满足，欢迎 issue 和 pr
 
 
-功能
 
+Sponsors
+Become a sponsor and get your logo on our README on GitHub with a link to your site. [Become a sponsor]
+
+
+
+Admin Dashboard Templates made with Vue, React and Angular.
+
+功能
 - 登录 / 注销
 
 - 权限验证
@@ -84,12 +123,11 @@ vue-start 是一个后台前端解决方案，它基于 vue 和 element-ui实现
 - Clipboard(剪贴复制)
 - Markdown2html
 开发
-
 # 克隆项目
 git clone https://github.com/PanJiaChen/vue-element-admin.git
 
 # 进入项目目录
-cd vue-start
+cd vue-element-admin
 
 # 安装依赖
 npm install
@@ -102,14 +140,12 @@ npm run dev
 浏览器访问 http://localhost:9527
 
 发布
-
 # 构建测试环境
 npm run build:stage
 
 # 构建生产环境
 npm run build:prod
 其它
-
 # 预览发布环境效果
 npm run preview
 
@@ -123,3 +159,8 @@ npm run lint
 npm run lint -- --fix
 更多信息请参考 使用文档
 
+Changelog
+Detailed changes for each release are documented in the release notes.
+
+Online Demo
+在线 Demo
