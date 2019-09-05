@@ -1,7 +1,6 @@
 <template>
   <el-dialog
     title="提示"
-    :visible.sync="visible"
     width="30%"
     :before-close="handleClose"
   >
