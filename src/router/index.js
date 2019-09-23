@@ -5,7 +5,6 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
-
 /* Router Modules */
 /* import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
@@ -181,7 +180,7 @@ export const asyncRoutes = [
         }
       }
     ]
-  },
+  },*/
 
   {
     path: '/icon',
@@ -194,7 +193,7 @@ export const asyncRoutes = [
         meta: { title: 'Icons', icon: 'icon', noCache: true }
       }
     ]
-  },*/
+  },
 
   /** when your routing map is too long, you can split it into small modules **/
   /*  componentsRouter,
