@@ -107,7 +107,7 @@ export const constantRoutes = [
       }
     ]
   },
-  /* {
+  {
     path: '/guide',
     component: Layout,
     redirect: '/guide/index',
@@ -119,7 +119,7 @@ export const constantRoutes = [
         meta: { title: 'Guide', icon: 'guide', noCache: true }
       }
     ]
-  },*/
+  },
   {
     path: '/profile',
     component: Layout,
