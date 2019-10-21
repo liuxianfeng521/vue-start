@@ -124,7 +124,7 @@ export const constantRoutes = [
     path: '/profile',
     component: Layout,
     redirect: '/profile/index',
-    hidden: true,
+    hidden: false,
     children: [
       {
         path: 'index',
@@ -181,7 +181,7 @@ export const asyncRoutes = [
         }
       }
     ]
-  },
+  },*/
 
   {
     path: '/icon',
@@ -194,7 +194,7 @@ export const asyncRoutes = [
         meta: { title: 'Icons', icon: 'icon', noCache: true }
       }
     ]
-  },*/
+  },
 
   /** when your routing map is too long, you can split it into small modules **/
   /*  componentsRouter,
@@ -383,17 +383,17 @@ export const asyncRoutes = [
       }
     ]
   },
-
+ */
   {
     path: 'external-link',
     component: Layout,
     children: [
       {
-        path: 'https://github.com/PanJiaChen/vue-element-admin',
+        path: 'https://www.baidu.com/',
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },*/
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
