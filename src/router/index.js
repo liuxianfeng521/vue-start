@@ -8,8 +8,8 @@ import Layout from '@/layout'
 /* Router Modules */
 /* import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
-import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'*/
+import tableRouter from './modules/table'*/
+import nestedRouter from './modules/nested'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -106,7 +106,7 @@ export const constantRoutes = [
       }
     ]
   },
-  /* {
+  {
     path: '/guide',
     component: Layout,
     redirect: '/guide/index',
@@ -118,12 +118,12 @@ export const constantRoutes = [
         meta: { title: 'Guide', icon: 'guide', noCache: true }
       }
     ]
-  },*/
+  },
   {
     path: '/profile',
     component: Layout,
     redirect: '/profile/index',
-    hidden: true,
+    hidden: false,
     children: [
       {
         path: 'index',
@@ -198,8 +198,8 @@ export const asyncRoutes = [
   /** when your routing map is too long, you can split it into small modules **/
   /*  componentsRouter,
   chartsRouter,
-  nestedRouter,
   tableRouter,*/
+  nestedRouter,
 
   /* {
     path: '/example',
@@ -382,17 +382,17 @@ export const asyncRoutes = [
       }
     ]
   },
-
+ */
   {
     path: 'external-link',
     component: Layout,
     children: [
       {
-        path: 'https://github.com/PanJiaChen/vue-element-admin',
+        path: 'https://www.baidu.com/',
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },*/
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
