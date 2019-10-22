@@ -48,7 +48,7 @@ const nestedRouter = {
         },
         {
           path: 'menu1-3',
-          component: () => import('@/views/nested/menu1/menu1-3'),
+          component: () => import('@/views/nested/menu3/index'),
           name: 'Menu1-3',
           meta: { title: 'Menu 1-3' }
         }
@@ -65,6 +65,12 @@ const nestedRouter = {
       name: 'menu3',
       component: () => import('@/views/nested/menu3/index'),
       meta: { title: 'Menu 3' }
+    },
+    {
+      path: 'menu4/:idd',
+      component: () => import('@/views/nested/menu4/index'),
+      name: 'menu4',
+      meta: { title: 'menu4' }
     }
   ]
 }
