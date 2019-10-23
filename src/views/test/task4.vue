@@ -5,7 +5,10 @@
     <el-radio v-model="radio" label="3">手机</el-radio>
     <span v-if="isShow1">电脑信息</span>
     <span v-else>手机信息</span>
+
+    <router-link :to="{ name:'task5'}">go task5</router-link>
   </div>
+
 </template>
 
 <script>

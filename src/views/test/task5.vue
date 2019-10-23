@@ -1,5 +1,7 @@
 <template>
-  <div :id="id" :class="className" :style="{height:height,width:width}" />
+  <div style="height: 100vh; display: flex; flex-direction: column;justify-content: center;align-items: center">
+    <div :id="id" :class="className" :style="{height:height,width:width}" style="flex: 1 ;" />
+  </div>
 </template>
 
 <script>
@@ -19,11 +21,11 @@ export default {
     },
     width: {
       type: String,
-      default: '200px'
+      default: '100%'
     },
     height: {
       type: String,
-      default: '200px'
+      default: '100%'
     }
   },
   data() {
