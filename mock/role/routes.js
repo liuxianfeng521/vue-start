@@ -58,6 +58,18 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/test',
+    component: 'layout/Layout',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/test/index'),
+        name: 'test',
+        meta: { title: 'test', icon: 'documentation' }
+      }
+    ]
+  },
+  {
     path: '/guide',
     component: 'layout/Layout',
     redirect: '/guide/index',

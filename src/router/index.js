@@ -97,13 +97,51 @@ export const constantRoutes = [
   {
     path: '/test',
     component: Layout,
+    meta: { title: 'test', icon: 'documentation' },
     children: [
       {
         path: 'index',
         component: () => import('@/views/test/index'),
-        name: 'test',
-        meta: { title: 'test', icon: 'documentation', affix: true }
+        name: 'index',
+        meta: { title: 'index', icon: 'documentation' }
+      },
+      {
+        path: 'task0',
+        component: () => import('@/views/test/task0'),
+        name: 'task0',
+        meta: { title: 'task0', icon: 'documentation' }
+      },
+      {
+        path: 'task1',
+        component: () => import('@/views/test/task1'),
+        name: 'task1',
+        meta: { title: 'task1', icon: 'documentation' }
+      },
+      {
+        path: 'task2',
+        component: () => import('@/views/test/task2'),
+        name: 'task2',
+        meta: { title: 'task2', icon: 'documentation' }
+      },
+      {
+        path: 'task3',
+        component: () => import('@/views/test/task3'),
+        name: 'task3',
+        meta: { title: 'task3', icon: 'documentation' }
+      },
+      {
+        path: 'task4',
+        component: () => import('@/views/test/task4'),
+        name: 'task4',
+        meta: { title: 'task4', icon: 'documentation' }
+      },
+      {
+        path: 'task5',
+        component: () => import('@/views/test/task5'),
+        name: 'task5',
+        meta: { title: 'task5', icon: 'documentation' }
       }
+
     ]
   },
   {
