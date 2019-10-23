@@ -6,7 +6,6 @@
     <span v-if="isShow1">电脑信息</span>
     <span v-else>手机信息</span>
   </div>
-
 </template>
 
 <script>
