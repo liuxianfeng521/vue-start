@@ -4,6 +4,7 @@
     <div>获取方式一 mapState {{ stateSize }}</div>
     <div>获取方式二 mapGetters {{ size }}</div>
     <div>获取方式三 store 对象 {{ this.$store.state.app.size }}</div>
+    <div> msg=================== {{ msg }}</div>
     <el-input v-model="input" />
     <el-button @click="mutations1">mapMutations方式 mutations</el-button>
     <el-button @click="mutations2">store 对象 mutations</el-button>
@@ -23,7 +24,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'size'
+      'size',
+      'msg'
     ]),
     ...mapState({
       stateSize: state => {

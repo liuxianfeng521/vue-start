@@ -147,8 +147,19 @@ export const constantRoutes = [
         component: () => import('@/views/test/task6'),
         name: 'task6',
         meta: { title: 'task6', icon: 'documentation' }
+      },
+      {
+        path: 'task7',
+        component: () => import('@/views/test/task7'),
+        name: 'task7',
+        meta: { title: 'task7', icon: 'documentation' }
+      },
+      {
+        path: 'testVuex',
+        component: () => import('@/views/test/testVuex'),
+        name: 'testVuex',
+        meta: { title: 'testVuex', icon: 'documentation' }
       }
-
     ]
   },
   {

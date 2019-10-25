@@ -41,7 +41,7 @@
 <script>
 import edit from './edit.vue'
 export default {
-  name: 'test',
+  name: 'Test',
   components: {
     edit
   },
