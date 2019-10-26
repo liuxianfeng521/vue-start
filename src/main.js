@@ -8,6 +8,7 @@ import '@/assets/styles/index.scss' // global css
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import i18n from './lang' // Internationalization
 import './icons' // icon
 import './permission' // permission control
 import './utils/error-log' // error log
@@ -27,7 +28,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 Vue.config.productionTip = false
 Vue.use(Element, {
-  size: Cookies.get('size') || 'medium' // set element-ui default size
+  size: Cookies.get('size') || 'medium', // set element-ui default size
+  i18n: (key, value) => i18n.t(key, value)
 })
 // register global utility filters
 Object.keys(filters).forEach(key => {
@@ -37,5 +39,6 @@ Object.keys(filters).forEach(key => {
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

@@ -320,7 +320,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
+*/
   {
     path: '/zip',
     component: Layout,
@@ -337,7 +337,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  /*
   {
     path: '/pdf',
     component: Layout,
@@ -405,15 +405,6 @@ const createRouter = () => new Router({
 })
 
 const router = createRouter()
-router.beforeEach((to, from, next) => {
-  // 全局前置守卫
-  console.log('全局前置守卫 beforeEach to, from, next', to, from, next)
-  next()
-})
-router.afterEach((to, from) => {
-  // 全局后置钩子
-  console.log('全局后置钩子 afterEach to, from', to, from)
-})
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
