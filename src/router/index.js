@@ -155,10 +155,22 @@ export const constantRoutes = [
         meta: { title: 'task7', icon: 'documentation' }
       },
       {
+        path: 'task8',
+        component: () => import('@/views/test/task8'),
+        name: 'task8',
+        meta: { title: 'task8', icon: 'documentation' }
+      },
+      {
         path: 'testVuex',
         component: () => import('@/views/test/testVuex'),
         name: 'testVuex',
         meta: { title: 'testVuex', icon: 'documentation' }
+      },
+      {
+        path: 'taskVuex',
+        component: () => import('@/views/test/taskVuex'),
+        name: 'taskVuex',
+        meta: { title: 'taskVuex', icon: 'documentation' }
       }
     ]
   },
@@ -376,7 +388,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
+*/
   {
     path: '/zip',
     component: Layout,
@@ -393,7 +405,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  /*
   {
     path: '/pdf',
     component: Layout,
@@ -461,15 +473,6 @@ const createRouter = () => new Router({
 })
 
 const router = createRouter()
-router.beforeEach((to, from, next) => {
-  // 全局前置守卫
-  console.log('全局前置守卫 beforeEach to, from, next', to, from, next)
-  next()
-})
-router.afterEach((to, from) => {
-  // 全局后置钩子
-  console.log('全局后置钩子 afterEach to, from', to, from)
-})
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
