@@ -11,7 +11,8 @@ const getters = {
   avatar: state => state.user.avatar,
   permission_routes: state => state.permission.routes,
   errorLogs: state => state.errorLog.logs,
-  msg: state => state.test.msg
+  msg: state => state.test.msg,
+  row: state => state.task.row
 }
 export default getters
 

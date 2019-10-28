@@ -10,6 +10,7 @@
     <el-button @click="mutations2">store 对象 mutations</el-button>
     <el-button @click="action1">mapActions 方式 action</el-button>
     <el-button @click="action2">store对象 方式 action</el-button>
+    <router-view />
   </div>
 </template>
 <script>
@@ -17,6 +18,7 @@ import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
 // import { createNamespacedHelpers } from 'vuex' // 用来导入具体模块，避免使用麻烦
 // const { mapState, mapMutations, mapActions, mapGetters } = createNamespacedHelpers('app')
 export default {
+  name: 'Menu2',
   data() {
     return {
       input: 'sate Size'

@@ -2,7 +2,7 @@
   <div style="padding:30px;">
     <el-alert :closable="false" title="menu 3" />
     <!--声明式-->
-    <router-link :to="{ name:'menu2'}">menu 2</router-link>
+    <router-link :to="{ name:'Menu2'}">menu 2</router-link>
     <router-link to="/nested/menu1/menu1-2/menu1-2-1">menu1-2-1</router-link>
     <div @click="goTo">goTomenu4</div>
   </div>
