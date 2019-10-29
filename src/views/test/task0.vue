@@ -22,7 +22,6 @@ export default {
   },
 
   created() {
-    debugger
     this.bringData()
   },
   methods: {
