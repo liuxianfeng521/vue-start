@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     bringRoll() {
-      this.rollLoading = true
+      this.rollLoading = false
       bringRoll().then(response => {
         this.roll = response.data
         this.rollLoading = false
