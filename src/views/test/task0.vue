@@ -1,6 +1,9 @@
 <template>
   <div class="app-container">
-    <el-table v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中" border fit highlight-current-row />
+    <input v-model="msg" v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中" border fit highlight-current-row>
+    <span>
+      {{ msg }}
+    </span>
   </div>
 </template>
 <script>
@@ -10,6 +13,7 @@ export default {
   name: 'Task0',
   data() {
     return {
+      msg: 'xxxxxxxxxxx',
       roll: null,
       rollLoading: true
     }
