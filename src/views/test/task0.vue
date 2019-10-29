@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-button v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中" border fit highlight-current-row />
+    <el-table v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中" border fit highlight-current-row />
   </div>
 </template>
 <script>
