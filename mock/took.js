@@ -1,4 +1,6 @@
-import Mock from 'took.js'
+import Mock from 'mockjs'
+
+
 export default [
   {
     url: '/took/roll',
@@ -6,12 +8,7 @@ export default [
     response: config => {
       return {
         code: 20000,
-        data: [
-          { key: 'PC', pv: 1024 },
-          { key: 'mobile', pv: 1024 },
-          { key: 'ios', pv: 1024 },
-          { key: 'android', pv: 1024 }
-        ]
+        data: ['CN', 'US', 'JP', 'EU']
       }
     }
   }]
