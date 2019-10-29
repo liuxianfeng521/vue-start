@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <span v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中">hello vue</span>
+  <div class="app-container">
+    <el-button v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中" border fit highlight-current-row />
   </div>
 </template>
 <script>
@@ -23,8 +23,7 @@ export default {
     bringData() {
       this.rollLoading = true
       bringRoll().then(response => {
-        debugger
-        this.roll = response.data
+        this.roll = response.data.array
         this.rollLoading = false
       })
     }
