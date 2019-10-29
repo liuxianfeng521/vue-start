@@ -1,9 +1,9 @@
 import request from '@/utils/request'
 
-export function bringRoll(query) {
+export function bringRoll(array) {
   return request({
     url: '/took/roll',
     method: 'get',
-    params: query
+    params: { array }
   })
 }
