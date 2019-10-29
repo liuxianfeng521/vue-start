@@ -7,7 +7,9 @@ export default [
     response: _ => {
       return {
         code: 20000,
-        data: ['CN', 'US', 'JP', 'EU']
+        data: {
+          array: ['CN', 'US', 'JP', 'EU']
+        }
       }
     }
   }
