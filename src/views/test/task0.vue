@@ -3,6 +3,7 @@
     <input v-model="msg" v-loading="rollLoading" :data="roll" element-loading-text="拼命加载中" border fit highlight-current-row>
     <span>
       {{ msg }}
+      {{ $t('guide.description') }}
     </span>
   </div>
 </template>
@@ -15,7 +16,8 @@ export default {
     return {
       msg: 'xxxxxxxxxxx',
       roll: null,
-      rollLoading: true
+      rollLoading: true,
+      arr: ['1', '2']
     }
   },
 
@@ -25,13 +27,12 @@ export default {
   },
   methods: {
     bringData() {
+      this.$t('guide.description')
       this.rollLoading = true
       bringRoll().then(response => {
         this.roll = response.data.array
         this.rollLoading = false
       })
     }
-
-  }
-}
+  }}
 </script>
