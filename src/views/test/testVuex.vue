@@ -1,35 +1,91 @@
 <template>
   <div>
-    <span>  djf33333iuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu</span>
-    <span> {{ msg }}</span>
-    <el-input v-model="input" />
-    <el-button @click="action1">mapActions 方式 action</el-button>
+    <el-dialog
+      title="编辑订单"
+      :visible.sync="visible"
+      @close="close()"
+    >
+      <el-form ref="ruleForm" :model="rowData" :rules="rules" class="demo-ruleForm">
+        <el-form-item label="姓名" prop="name" :label-width="formLabelWidth">
+          <el-input v-model="rowData.name" auto-complete="off" />
+        </el-form-item>
+        <el-form-item label="地址" prop="address" :label-width="formLabelWidth">
+          <el-input v-model="rowData.address" placeholder="请选择活动区域" />
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button type="primary" :loading="loading" @click="submitForm()">确认</el-button>
+        <el-button @click="close()">取消</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
-
 <script>
-import { mapGetters, mapActions } from 'vuex'
 export default {
-
   name: 'TestVuex',
+  props: {
+    dialogFormVisible: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    rowData: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+
+  },
   data() {
     return {
-      input: 'ddduxj'
+      loading: false,
+      visible: this.dialogFormVisible,
+      ruleForm: {
+        name: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
+      },
+      rules: {
+        name: [
+          { required: true, message: '请输入活动名称', trigger: 'blur' },
+          { min: 3, max: 15, message: '输入字段的长度', trigger: 'blur' },
+          { pattern: /^[A-Za-z0-9\u4e00-\u9fa5]+$/gi, message: '姓名只能为中文英文字母数字', trigger: 'blur' }
+        ],
+        address: [
+          { required: true, message: '请选择活动区域', trigger: 'change' }
+        ] },
+      formLabelWidth: '100px'
     }
-  },
-  computed: {
-    ...mapGetters([
-      'msg'
-    ])
-
   },
   methods: {
-    ...mapActions('test', ['setMsg']),
-    action1() {
-      this.setMsg(this.input)
+    submitForm() {
+      console.log('submitForm================')
+      this.$refs.ruleForm.validate((valid) => {
+        if (valid) {
+          this.loading = true
+          setTimeout(() => {
+            this.$emit('closeIt', this.rowData)
+            this.loading = false
+          }, 5000)
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    close() {
+      this.$emit('closeIt', this.dialogFormVisible)
     }
   }
+
 }
+
 </script>
 
 <style scoped>

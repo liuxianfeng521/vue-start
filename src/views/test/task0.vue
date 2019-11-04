@@ -9,7 +9,6 @@
 </template>
 <script>
 import { bringRoll } from '@/api/took'
-
 export default {
   name: 'Task0',
   data() {
@@ -31,6 +30,8 @@ export default {
       bringRoll().then(response => {
         this.roll = response.data.array
         this.rollLoading = false
+      }).catch(err => {
+        console.log('err===============', err)
       })
     }
   }}
