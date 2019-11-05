@@ -10,7 +10,15 @@
           <el-input v-model="rowData.name" auto-complete="off" />
         </el-form-item>
         <el-form-item label="地址" prop="address" :label-width="formLabelWidth">
-          <el-input v-model="rowData.address" placeholder="请选择活动区域" />
+          <el-input v-model="rowData.address" placeholder="请选择收货地址" />
+        </el-form-item>
+        <el-form-item label="日期" prop="date" :label-width="formLabelWidth">
+          <el-date-picker
+            v-model="rowData.date"
+            placeholder="选择日期"
+            format="yyyy 年 MM 月 dd 日"
+            value-format="yyyy-MM-dd"
+          />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -21,6 +29,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'TestVuex',
   props: {
@@ -44,8 +53,7 @@ export default {
       visible: this.dialogFormVisible,
       ruleForm: {
         name: '',
-        date1: '',
-        date2: '',
+        date: '',
         delivery: false,
         type: [],
         resource: '',
@@ -59,13 +67,15 @@ export default {
         ],
         address: [
           { required: true, message: '请选择活动区域', trigger: 'change' }
-        ] },
+        ],
+        date: [{ required: true, message: '选择订单日期', trigger: 'blur' }
+        ]
+      },
       formLabelWidth: '100px'
     }
   },
   methods: {
     submitForm() {
-      console.log('submitForm================')
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
           this.loading = true

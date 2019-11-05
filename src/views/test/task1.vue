@@ -6,12 +6,6 @@
       max-height="100%"
     >
       <el-table-column
-        fixed
-        prop="date"
-        label="日期"
-        width="150"
-      />
-      <el-table-column
         prop="name"
         label="姓名"
         width="120"
@@ -34,6 +28,11 @@
       <el-table-column
         prop="zip"
         label="邮编"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="日期"
         width="150"
       />
       <el-table-column

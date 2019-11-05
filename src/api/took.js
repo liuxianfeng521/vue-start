@@ -7,6 +7,7 @@ export function bringRoll(query) {
     params: query
   })
 }
+
 export function bringTableData4(query) {
   return request({
     url: '/took/tableData4',
@@ -14,3 +15,4 @@ export function bringTableData4(query) {
     params: query
   })
 }
+
