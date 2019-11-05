@@ -115,7 +115,7 @@ export const constantRoutes = [
         path: 'task1',
         component: () => import('@/views/test/task1'),
         name: 'task1',
-        meta: { title: 'task1', icon: 'documentation' }
+        meta: { title: 'task1', icon: 'table' }
       },
       {
         path: 'task2',
@@ -126,8 +126,8 @@ export const constantRoutes = [
       {
         path: 'task3',
         component: () => import('@/views/test/task3'),
-        name: 'task3',
-        meta: { title: 'task3', icon: 'documentation' }
+        name: 'task4',
+        meta: { title: 'task4', icon: 'guide' }
       },
       {
         path: 'task4',
@@ -139,7 +139,7 @@ export const constantRoutes = [
         path: 'task5',
         component: () => import('@/views/test/task5'),
         name: 'task5',
-        meta: { title: 'task5', icon: 'documentation' }
+        meta: { title: 'task5', icon: 'chart' }
       },
       {
         path: 'task6',
@@ -151,7 +151,7 @@ export const constantRoutes = [
         path: 'task7',
         component: () => import('@/views/test/task7'),
         name: 'task7',
-        meta: { title: 'task7', icon: 'documentation' }
+        meta: { title: 'task7', icon: '404' }
       },
       {
         path: 'task8',
@@ -175,7 +175,7 @@ export const constantRoutes = [
         path: 'test',
         component: () => import('@/views/test/test'),
         name: 'test',
-        meta: { title: 'test', icon: 'documentation' }
+        meta: { title: 'test', icon: 'tab' }
       }
     ]
   },
