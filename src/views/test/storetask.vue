@@ -11,7 +11,7 @@
 <script>
 import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
-  name: 'TaskVuex',
+  name: 'Storetask',
   data() {
     return {
       input: 'hello world'

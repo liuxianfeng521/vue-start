@@ -11,23 +11,21 @@
     </el-tabs>
   </div>
 </template>
-
 <script>
-import tabPane from './components/TabPane'
-
+import tabPane from '@/views/tab/components/TabPane'
 export default {
   name: 'Tab',
   components: { tabPane },
   data() {
     return {
+      activeName: 'CN',
+      createdTimes: 0,
       tabMapOptions: [
         { label: 'China', key: 'CN' },
         { label: 'USA', key: 'US' },
         { label: 'Japan', key: 'JP' },
         { label: 'Eurozone', key: 'EU' }
-      ],
-      activeName: 'CN',
-      createdTimes: 0
+      ]
     }
   },
   watch: {
@@ -46,11 +44,6 @@ export default {
       this.createdTimes = this.createdTimes + 1
     }
   }
+
 }
 </script>
-
-<style scoped>
-  .tab-container {
-    margin: 30px;
-  }
-</style>

@@ -100,40 +100,40 @@ export const constantRoutes = [
     meta: { title: 'test', icon: 'documentation' },
     children: [
       {
-        path: 'index',
-        component: () => import('@/views/test/index'),
-        name: 'index',
-        meta: { title: 'index', icon: 'documentation' }
+        path: 'dashBoardTask',
+        component: () => import('@/views/test/dashboardtask'),
+        name: 'dashBoardTask',
+        meta: { title: 'dashBoardTask', icon: 'documentation' }
       },
       {
-        path: 'task0',
-        component: () => import('@/views/test/task0'),
-        name: 'task0',
-        meta: { title: 'task0', icon: 'documentation' }
+        path: 'complexTableTask',
+        component: () => import('@/views/test/complextabletask'),
+        name: 'complexTableTask',
+        meta: { title: 'complexTableTask', icon: 'documentation' }
       },
       {
-        path: 'task1',
-        component: () => import('@/views/test/task1'),
-        name: 'task1',
-        meta: { title: 'task1', icon: 'table' }
+        path: 'tableTask',
+        component: () => import('@/views/test/tabletask'),
+        name: 'tableTask',
+        meta: { title: 'tableTask', icon: 'table' }
       },
       {
-        path: 'task2',
-        component: () => import('@/views/test/task2'),
-        name: 'task2',
-        meta: { title: 'task2', icon: 'documentation' }
+        path: 'TabTableTask',
+        component: () => import('@/views/test/tabtabletask'),
+        name: 'TabTableTask',
+        meta: { title: 'TabTableTask', icon: 'documentation' }
       },
       {
-        path: 'task3',
-        component: () => import('@/views/test/task3'),
-        name: 'task4',
-        meta: { title: 'task4', icon: 'guide' }
+        path: 'guideTask',
+        component: () => import('@/views/test/guidetask'),
+        name: 'guideTask',
+        meta: { title: 'guideTask', icon: 'guide' }
       },
       {
-        path: 'task4',
-        component: () => import('@/views/test/task4'),
-        name: 'task4',
-        meta: { title: 'task4', icon: 'documentation' }
+        path: 'uploadTask',
+        component: () => import('@/views/test/uploadtask'),
+        name: 'uploadTask',
+        meta: { title: 'uploadTask', icon: 'documentation' }
       },
       {
         path: 'task5',
@@ -142,22 +142,22 @@ export const constantRoutes = [
         meta: { title: 'task5', icon: 'chart' }
       },
       {
-        path: 'task6',
-        component: () => import('@/views/test/task6'),
-        name: 'task6',
-        meta: { title: 'task6', icon: 'documentation' }
+        path: 'formTask',
+        component: () => import('@/views/test/formtask'),
+        name: 'formTask',
+        meta: { title: 'formTask', icon: 'documentation' }
       },
       {
-        path: 'task7',
-        component: () => import('@/views/test/task7'),
-        name: 'task7',
-        meta: { title: 'task7', icon: '404' }
+        path: '404task',
+        component: () => import('@/views/test/404task'),
+        name: '404task',
+        meta: { title: '404task', icon: '404' }
       },
       {
-        path: 'task8',
-        component: () => import('@/views/test/task8'),
-        name: 'task8',
-        meta: { title: 'task8', icon: 'documentation' }
+        path: '401task',
+        component: () => import('@/views/test/401task'),
+        name: '401task',
+        meta: { title: '401task', icon: 'documentation' }
       },
       {
         path: 'testVuex',
@@ -166,10 +166,16 @@ export const constantRoutes = [
         meta: { title: 'testVuex', icon: 'documentation' }
       },
       {
-        path: 'taskVuex',
-        component: () => import('@/views/test/taskVuex'),
-        name: 'taskVuex',
-        meta: { title: 'taskVuex', icon: 'documentation' }
+        path: 'storeTask',
+        component: () => import('@/views/test/storetask'),
+        name: 'storeTask',
+        meta: { title: 'storeTask', icon: 'documentation' }
+      },
+      {
+        path: 'iconTask',
+        component: () => import('@/views/test/icontask'),
+        name: 'iconTask',
+        meta: { title: 'iconTask', icon: 'documentation' }
       },
       {
         path: 'test',
