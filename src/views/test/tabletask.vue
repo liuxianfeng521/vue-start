@@ -11,6 +11,11 @@
         width="120"
       />
       <el-table-column
+        prop="age"
+        label="年龄"
+        width="120px"
+      />
+      <el-table-column
         prop="province"
         label="省份"
         width="120"
@@ -26,6 +31,11 @@
         width="300"
       />
       <el-table-column
+        prop="Phone"
+        label="联系电话"
+        width="150"
+      />
+      <el-table-column
         prop="zip"
         label="邮编"
         width="150"
@@ -38,7 +48,7 @@
       <el-table-column
         fixed="right"
         label="操作"
-        width="200"
+        width="150"
       >
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
@@ -66,17 +76,20 @@ export default {
     this.bringData()
   },
   methods: {
+    // 打开表单并拿到表格副本
     handleClick(row) {
       const tmp = Object.assign({}, row)
       this.curRow = tmp
       this.dialogFormVisible = true
     },
     closeIt(obj) {
+      // 调用子组件方法
       const index = this.tableData4.findIndex((value) => { return value.id === obj.id })
       this.tableData4.splice(index, 1, obj)
       this.dialogFormVisible = false
     },
     bringData() {
+      // 从后端获取数据
       bringTableData4().then(response => {
         console.log(response)
         this.tableData4 = response.data.tableData4

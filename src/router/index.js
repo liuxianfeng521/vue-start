@@ -172,6 +172,12 @@ export const constantRoutes = [
         meta: { title: 'storeTask', icon: 'documentation' }
       },
       {
+        path: 'flexTask',
+        component: () => import('@/views/test/flextask'),
+        name: 'flexTask',
+        meta: { title: 'flexTask', icon: 'documentation' }
+      },
+      {
         path: 'iconTask',
         component: () => import('@/views/test/icontask'),
         name: 'iconTask',
