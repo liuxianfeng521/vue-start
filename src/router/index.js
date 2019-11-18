@@ -118,6 +118,12 @@ export const constantRoutes = [
         meta: { title: 'tableTask', icon: 'table' }
       },
       {
+        path: 'bartask',
+        component: () => import('@/views/test/bartask'),
+        name: 'bartask',
+        meta: { title: 'bartask', icon: 'table' }
+      },
+      {
         path: 'TabTableTask',
         component: () => import('@/views/test/tabtabletask'),
         name: 'TabTableTask',
