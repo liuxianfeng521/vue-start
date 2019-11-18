@@ -22,8 +22,6 @@ export default [
           tableData4: [{
             id: 1,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-01',
@@ -32,8 +30,6 @@ export default [
           }, {
             id: 2,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-02',
@@ -42,8 +38,6 @@ export default [
           }, {
             id: 3,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-03',
@@ -52,8 +46,6 @@ export default [
           }, {
             id: 4,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-04',
@@ -62,8 +54,6 @@ export default [
           }, {
             id: 5,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-05',
@@ -72,8 +62,6 @@ export default [
           }, {
             id: 6,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-06',
@@ -82,8 +70,6 @@ export default [
           }, {
             id: 7,
             name: '王小虎',
-            province: '上海',
-            city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-07',

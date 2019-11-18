@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-dialog
-      title="编辑订单"
+      :title="isModify?'编辑订单':'新增订单'"
       :visible.sync="visible"
       @close="close()"
     >
@@ -38,7 +38,6 @@
 </template>
 <script>
 export default {
-  name: 'TestVuex',
   props: {
     dialogFormVisible: {
       type: Boolean,
@@ -51,8 +50,13 @@ export default {
       default() {
         return {}
       }
+    },
+    isModify: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
-
   },
   data() {
     // 自定义验证规则 phone age zip
@@ -149,7 +153,7 @@ export default {
             // 父组件调用此方法替换表格数据
             this.$emit('closeIt', this.rowData)
             this.loading = false
-          }, 5000)
+          }, 50)
         } else {
           console.log('error submit!!')
           return false
@@ -158,7 +162,7 @@ export default {
     },
     // 关闭列表
     close() {
-      this.$emit('closeIt', this.dialogFormVisible)
+      this.$emit('closeIt', this.rowData)
     },
     // 打印验证
     handleChange(value) {

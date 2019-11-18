@@ -160,12 +160,6 @@ export const constantRoutes = [
         meta: { title: '401task', icon: 'documentation' }
       },
       {
-        path: 'testVuex',
-        component: () => import('@/views/test/testVuex'),
-        name: 'testVuex',
-        meta: { title: 'testVuex', icon: 'documentation' }
-      },
-      {
         path: 'storeTask',
         component: () => import('@/views/test/storetask'),
         name: 'storeTask',
