@@ -58,6 +58,7 @@
       :row-data="curRow"
       :is-modify="isModify"
       @closeIt="closeIt"
+      @shut="shut"
     />
   </div>
 </template>
@@ -88,7 +89,7 @@ export default {
         this.curRow = Object.assign({}, row)
         console.log('bianjing---------5555555555', this.curRow)
       } else {
-        // 打开增加页面，为空值
+        // 为空值,打开增加页面
         this.isModify = false
         this.curRow = {
           id: new Date().getTime(),
@@ -102,6 +103,9 @@ export default {
       }
 
       this.dialogFormVisible = true
+    },
+    shut() {
+      this.dialogFormVisible = false
     },
     closeIt(obj) {
       this.dialogFormVisible = false

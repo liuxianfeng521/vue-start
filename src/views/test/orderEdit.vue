@@ -162,7 +162,7 @@ export default {
     },
     // 关闭列表
     close() {
-      this.$emit('closeIt', this.rowData)
+      this.$emit('shut')
     },
     // 打印验证
     handleChange(value) {
