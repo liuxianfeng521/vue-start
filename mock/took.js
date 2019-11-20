@@ -13,6 +13,20 @@ export default [
     }
   },
   {
+    url: '/task/barTaskDate',
+    type: 'get',
+    response: _ => {
+      return {
+        code: 20000,
+        data: {
+          barData: { xData: ['14日', '15日', '16日', '17日', '18日'],
+            seriesData: [20, 35, 50, 80, 90]
+          }
+        }
+      }
+    }
+  },
+  {
     url: '/took/tableData4',
     type: 'get',
     response: _ => {

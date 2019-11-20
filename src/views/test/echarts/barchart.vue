@@ -19,18 +19,44 @@ export default {
     },
     height: {
       type: String,
-      default: '400px'
+      default: '500px'
+    },
+    barchartdata: {
+      type: Object,
+      default() {
+        return {
+          xData: [],
+          seriesData: []
+        }
+      }
     }
   },
   data() {
     return {
-      chart: null
+      chart: null,
+      data: this.barchartdata
+    }
+  },
+  watch: {
+    // 监听props里面barchartdata对象的值，发生变化时触发handler方法拿到变化后的值，
+    barchartdata: {
+      handler() {
+        this.initChart() // 数据发生变化后重新渲染
+      },
+      deep: true
     }
   },
   mounted() {
     this.$nextTick(() => {
       this.initChart()
     })
+  },
+  beforeDestroy() {
+    if (!this.chart) {
+      return
+    }
+    this.chart.dispose()
+    this.chart = null
   },
   methods: {
     initChart() {
@@ -55,7 +81,7 @@ export default {
           }
         },
         grid: {// 设置图标距离(grid 组件离容器的距离)
-          top: 30,
+          top: 60,
           left: '5%',
           right: '5%',
           bottom: '3%',
@@ -63,7 +89,7 @@ export default {
         },
         xAxis: [{
           type: 'category', // 轴类型
-          data: ['14日', '15日', '16日', '17日', '18日']
+          data: this.barchartdata.xData
         }],
         yAxis: [{
           // Y轴百分比显示
@@ -80,13 +106,26 @@ export default {
           },
           min: 0,
           max: 100,
-          splitNumber: 10 // 间隔为10
+          splitNumber: 5 // 间隔为10
         }],
         series: [{ // 提示框信息
           name: 'CPU利用率',
           type: 'bar',
-          barWidth: '40%', // 柱形的宽度
-          data: [20, 35, 50, 80, 90]
+          barWidth: '20%', // 柱形的宽度
+          data: this.barchartdata.seriesData,
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(
+                0, 1, 0, 0,
+                [
+                  { offset: 0, color: '#00FF00' },
+                  { offset: 0.5, color: '#3A8EE6' },
+                  { offset: 0.6, color: '#FAB6B6' },
+                  { offset: 1, color: '#ddd' }
+                ]
+              )
+            }
+          }
         }]
       })
     }
