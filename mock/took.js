@@ -27,6 +27,22 @@ export default [
     }
   },
   {
+    url: '/task/lineTaskDate',
+    type: 'get',
+    response: _ => {
+      return {
+        code: 20000,
+        data: {
+          newVisitis: {
+            expectedData: [100, 120, 161, 134, 105, 160, 165],
+            actualData: [120, 82, 91, 154, 162, 140, 145],
+            xdata: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日']
+          }
+        }
+      }
+    }
+  },
+  {
     url: '/took/tableData4',
     type: 'get',
     response: _ => {

@@ -22,4 +22,11 @@ export function bringBarTask(query) {
     params: query
   })
 }
+export function bringlineTask(query) {
+  return request({
+    url: '/task/lineTaskDate',
+    method: 'get',
+    params: query
+  })
+}
 

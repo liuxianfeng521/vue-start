@@ -61,7 +61,6 @@ export default {
   methods: {
     initChart() {
       this.chart = echarts.init(this.$el, 'macarons') // 通过 eCharts.init 方法初始化一个 eCharts 实例并通过 setOption 方法生成一个简单的柱状图
-      // 使用刚指定的配置项和数据显示图表
       this.chart.setOption({
         // 标题title 主标题test
         title: {
@@ -89,7 +88,10 @@ export default {
         },
         xAxis: [{
           type: 'category', // 轴类型
-          data: this.barchartdata.xData
+          data: this.barchartdata.xData,
+          axisLabel: {
+            interval: 0
+          }
         }],
         yAxis: [{
           // Y轴百分比显示
@@ -108,25 +110,22 @@ export default {
           max: 100,
           splitNumber: 5 // 间隔为10
         }],
-        series: [{ // 提示框信息
-          name: 'CPU利用率',
-          type: 'bar',
-          barWidth: '20%', // 柱形的宽度
-          data: this.barchartdata.seriesData,
-          itemStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(
-                0, 1, 0, 0,
-                [
-                  { offset: 0, color: '#00FF00' },
-                  { offset: 0.5, color: '#3A8EE6' },
-                  { offset: 0.6, color: '#FAB6B6' },
-                  { offset: 1, color: '#ddd' }
-                ]
-              )
+        series: [
+          { // 提示框信息
+            name: 'CPU利用率',
+            type: 'bar',
+            barWidth: '20%', // 柱形的宽度
+            data: this.barchartdata.seriesData,
+            color: function(item) { // 取值增加判断条件，显示不同颜色
+              const colors = ['#00DB00', '#FFD306', '#FF0000']
+              let color = ''
+              if (item.value < 50) color = colors[0]
+              else if (item.value >= 50 && item.value < 70) color = colors[1]
+              else color = colors[2]
+              return color
             }
           }
-        }]
+        ]
       })
     }
   }
