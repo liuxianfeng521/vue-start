@@ -22,8 +22,13 @@
         width="300"
       />
       <el-table-column
+        prop="movePhone"
+        label="移动电话"
+        width="150"
+      />
+      <el-table-column
         prop="Phone"
-        label="联系电话"
+        label="固定电话"
         width="150"
       />
       <el-table-column
@@ -87,7 +92,6 @@ export default {
         // 取到row值,打开编辑页面
         this.isModify = true
         this.curRow = Object.assign({}, row)
-        console.log('bianjing---------5555555555', this.curRow)
       } else {
         // 为空值,打开增加页面
         this.isModify = false

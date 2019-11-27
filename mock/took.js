@@ -55,7 +55,8 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-01',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }, {
             id: 2,
@@ -63,7 +64,8 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-02',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }, {
             id: 3,
@@ -71,7 +73,8 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-03',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }, {
             id: 4,
@@ -79,7 +82,8 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-04',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }, {
             id: 5,
@@ -87,7 +91,8 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-05',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }, {
             id: 6,
@@ -95,7 +100,8 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-06',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }, {
             id: 7,
@@ -103,11 +109,23 @@ export default [
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
             date: '2016-05-07',
-            Phone: '18195642365',
+            movePhone: '18195642365',
+            Phone: '0996-5957423',
             age: '22'
           }]
         }
       }
     }
+  },
+  {
+    url: '/task/verifyPhone',
+    type: 'post',
+    response: _ => {
+      return {
+        code: 20000,
+        data: true
+      }
+    }
   }
+
 ]

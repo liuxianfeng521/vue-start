@@ -23,12 +23,16 @@
             value-format="yyyy-MM-dd"
           />
         </el-form-item>
-        <el-form-item label="联系电话:" prop="Phone" :label-width="formLabelWidth" required>
+        <el-form-item label="移动电话:" prop="movePhone" :label-width="formLabelWidth" required>
+          <el-input v-model="rowData.movePhone" />
+        </el-form-item>
+        <el-form-item label="固定电话:" prop="Phone" :label-width="formLabelWidth" required>
           <el-input v-model="rowData.Phone" />
         </el-form-item>
         <el-form-item label="邮编号码:" prop="zip" :label-width="formLabelWidth" required>
           <el-input v-model="rowData.zip" />
-        </el-form-item></el-form>
+        </el-form-item>
+      </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="primary" :loading="loading" @click="submitForm()">确认</el-button>
         <el-button @click="close()">取消</el-button>
@@ -37,6 +41,7 @@
   </div>
 </template>
 <script>
+import { bringVerifyPhone } from '@/api/took'
 export default {
   props: {
     dialogFormVisible: {
@@ -60,7 +65,7 @@ export default {
   },
   data() {
     // 自定义验证规则 phone age zip
-    var checkPhone = (rule, value, callback) => {
+    var checkMovePhone = (rule, value, callback) => {
       const phoneReg = /^1[3|4|5|7|8][0-9]{9}$/
       if (!value) {
         return callback(new Error('电话号码不能为空'))
@@ -102,6 +107,27 @@ export default {
         }
       }, 100)
     }
+    var Phone = (rule, value, callback) => {
+      const PhoneReg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/
+      if (!value) {
+        return callback(new Error('固定电话不能为空'))
+      } else {
+        if (!PhoneReg.test(value)) {
+          callback(new Error('请输入正确的座机号格式  示例：0000-0000000'))
+        } else {
+          // 调用了异步效验方法
+          bringVerifyPhone(value).then(
+            (res) => {
+              if (res.data) {
+                callback(new Error('名字重复，请修改'))
+              } else {
+                callback()
+              }
+            }
+          )
+        }
+      }
+    }
     return {
       loading: false,
       visible: this.dialogFormVisible,
@@ -112,6 +138,7 @@ export default {
         type: [],
         resource: '',
         desc: '',
+        movePhone: '',
         Phone: '',
         zip: '',
         age: ''
@@ -129,8 +156,11 @@ export default {
         ],
         date: [{ required: true, message: '选择订单日期', trigger: 'blur' }
         ],
+        movePhone: [
+          { validator: checkMovePhone, trigger: ['change', 'blur'] }
+        ],
         Phone: [
-          { validator: checkPhone, trigger: ['change', 'blur'] }
+          { validator: Phone, trigger: ['blur'] }
         ],
         zip: [
           { validator: zip, trigger: 'blur' }

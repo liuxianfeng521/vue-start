@@ -29,4 +29,10 @@ export function bringlineTask(query) {
     params: query
   })
 }
-
+export function bringVerifyPhone(params) {
+  return request({
+    url: '/task/verifyPhone',
+    method: 'post',
+    params: params
+  })
+}

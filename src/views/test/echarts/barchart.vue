@@ -102,7 +102,7 @@ export default {
               color: '#3398DB',
               fontSize: '60%'
             },
-            interval: 0, // 指定选择间隔
+            interval: 10, // 指定选择间隔
             showMinLabel: true,
             formatter: '{value} %'
           },
@@ -114,7 +114,7 @@ export default {
           { // 提示框信息
             name: 'CPU利用率',
             type: 'bar',
-            barWidth: '20%', // 柱形的宽度
+            barWidth: '10%', // 柱形的宽度
             data: this.barchartdata.seriesData,
             color: function(item) { // 取值增加判断条件，显示不同颜色
               const colors = ['#00DB00', '#FFD306', '#FF0000']
