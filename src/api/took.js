@@ -15,6 +15,13 @@ export function bringTableData4(query) {
     params: query
   })
 }
+export function bringTableData3(query) {
+  return request({
+    url: '/took/tableData3',
+    method: 'get',
+    params: query
+  })
+}
 export function bringBarTask(query) {
   return request({
     url: '/task/barTaskDate',

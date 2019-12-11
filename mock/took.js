@@ -118,6 +118,33 @@ export default [
     }
   },
   {
+    url: '/took/tableData3',
+    type: 'get',
+    response: _ => {
+      return {
+        code: 20000,
+        data: {
+          tableData3: [{
+            id: 1,
+            hostname: 'PC201708231101',
+            condition: '开机',
+            username: 'A12306'
+          }, {
+            id: 2,
+            hostname: 'PC201708231102',
+            condition: '开机',
+            username: 'A12306'
+          }, {
+            id: 3,
+            hostname: 'PC201708231103',
+            condition: '开机',
+            username: 'A12306'
+          }]
+        }
+      }
+    }
+  },
+  {
     url: '/task/verifyPhone',
     type: 'post',
     response: _ => {

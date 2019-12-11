@@ -119,7 +119,7 @@ export default {
           bringVerifyPhone(value).then(
             (res) => {
               if (res.data) {
-                callback(new Error('名字重复，请修改'))
+                callback(new Error('座机号码重复，请修改'))
               } else {
                 callback()
               }

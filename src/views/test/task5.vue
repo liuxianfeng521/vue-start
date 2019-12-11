@@ -1,66 +1,45 @@
 <template>
-  <div id="app1">
-    <input v-model="filter">
-    <p>{{ filter }}</p>
+  <div>
+    <input v-model="test2" />
+    <div>请输入您的成绩查看分数等级：{{ test }}</div>
   </div>
 </template>
-
-<script type="text/javascript">
+<script>
 export default {
-  name: 'App',
   data() {
     return {
-      filter: 'all'
+      test2: ''
     }
   },
-  beforeCreate() {
-    console.log('==============' + 'beforeCreated' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
+  computed: {
+    test() {
+      return this.gradeToLevel(this.test2)
+    }
   },
-  created() {
-    console.log('==============' + 'created' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
-  },
-  beforeMount() {
-    console.log('==============' + 'beforeMount' + '===================')
-    console.log(this.$el)
-    console.log(document.getElementById('app1'))
-    console.log(this.$data)
-    console.log(this.filter)
-  },
-  mounted() {
-    console.log('==============' + 'mounted' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
-  },
-  beforeUpdate() {
-    console.log('==============' + 'beforeUpdate' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
-  },
-  updated() {
-    console.log('==============' + 'updated' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
-  },
-  beforeDestroy() {
-    console.log('==============' + 'beforeDestroy' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
-  },
-  destroyed() {
-    console.log('==============' + 'destroyed' + '===================')
-    console.log(this.$el)
-    console.log(this.$data)
-    console.log(this.filter)
+  methods: {
+    gradeToLevel(grade) {
+      let res = ''
+      if (!grade) { res = '' } else if (grade < 0) { res = '成绩不能为负值' } else if (grade < 30) { res = '极差' } else if (grade >= 30 && grade < 50) { res = '差' } else if (grade >= 50 && grade < 60) { res = '不及格' } else if (grade >= 60 && grade < 80) {
+        res = '良'
+      } else if (grade >= 80 && grade <= 100) {
+        res = '优'
+      } else if (grade > 100) {
+        res = '最高分为100'
+      }
+      return res
+    },
+    gradeToLevel2(row) {
+      let res = ''
+      if (row < 30) {
+        res = '极差'
+      }
+      if (row >= 30 && row < 50) { res = '差' }
+      if (row >= 50 && row < 60) { res = '不及格' }
+      if (row >= 60 && row < 80) { res = '良' }
+      if (row >= 80) { res = '优' }
+      return res
+    }
   }
 }
+
 </script>

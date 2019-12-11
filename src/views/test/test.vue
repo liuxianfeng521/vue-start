@@ -1,41 +1,191 @@
 <template>
   <div>
-    <div>
-      <el-button type="primary" @click="mixinsFun">确定</el-button>
-      <input v-model="testMix" type="test">
-    </div>
-    <div>{{ testMix2 }}</div>
+    <el-button type="danger" @click="batchDeleted()">批量删除</el-button>
+    <el-button type="primary" @click="addClick()">新增</el-button>
+    <el-button type="primary" @click="handleChoose()">选择</el-button>
+    <el-table
+      ref="multipleTable"
+      :data="tableData3"
+      tooltip-effect="dark"
+      style="width: 100%"
+      @selection-change="handleSelectionChange"
+    >
+      <el-table-column
+        type="selection"
+        width="55"
+      />
+      <el-table-column
+        prop="hostname"
+        label="主机名"
+        width="200"
+      />
+      <el-table-column
+        prop="condition"
+        label="状态"
+        width="200"
+      />
+      <el-table-column
+        prop="username"
+        label="用户名"
+      />
+      <el-table-column
+        fixed="right"
+        label="操作"
+        width="150"
+      >
+        <template slot-scope="scope">
+          <el-button
+            type="danger"
+            size="small"
+            @click="deleteRow(scope)"
+          >删除
+          </el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <orderForm
+      v-if="dialogFormVisible"
+      :dialog-form-visible.sync="dialogFormVisible"
+      :row-data="curRow"
+      @closeIt="closeIt"
+      @shut="shut"
+    />
+    <orderTable
+      v-if="dialogTableVisible"
+      :dialog-table-visible.sync="dialogTableVisible"
+      @closeIt2="closeIt2"
+      @shut2="shut2"
+    />
   </div>
 </template>
 <script>
-import { test } from '@/views/dashboard/admin/components/mixins/test'
+import orderForm from '@/views/test/orderForm'
+import orderTable from '@/views/test/orderTable'
+import { bringTableData3 } from '@/api/took'
 export default {
-  mixins: [test],
+  components: {
+    orderForm,
+    orderTable
+  },
   data() {
     return {
-      // testMix: '这是组件的数据'
-    }
-  },
-  computed: {
-    testMix2() {
-      return this.testMix + '你好'
-    }
-  },
-  watch: {
-    testMix(newVal, oldVal) {
-      console.log('组件的watch', newVal, oldVal)
+      curRow: {},
+      dialogFormVisible: false,
+      dialogTableVisible: false,
+      tableData3: [],
+      tableChecked: []
     }
   },
   created() {
-    console.log('这是组件的created')
+    this.bringData()
   },
   methods: {
-    mixinsFun() {
-      console.log('这是组件的')
+    handleSelectionChange(val) {
+      this.tableChecked = val
+    },
+    batchDeleted() {
+      const val = this.tableChecked
+      if (val.length === 0) {
+        this.$notify({
+          title: '警告',
+          message: '请至少选中一行',
+          type: 'warning'
+        })
+      } else {
+        this.$confirm('确定删除选中主机名吗？', {
+          confirmButtonText: '确认',
+          cancelButtonText: '取消',
+          type: 'warning'
+        })
+          .then(() => {
+            if (val) {
+            // 将选中数据遍历
+              val.forEach((val) => {
+                this.tableData3.forEach((v, i) => {
+                  if (val.id === v.id) {
+                    this.tableData3.splice(i, 1)
+                  }
+                })
+              })
+            }
+          })
+      }
+    },
+    addClick() {
+      this.curRow = {
+        id: new Date().getTime(),
+        hostname: '',
+        username: '',
+        condition: ''
+      }
+      this.dialogFormVisible = true
+    },
+    handleChoose() {
+      this.dialogTableVisible = true
+    },
+    closeIt(obj) {
+      this.dialogFormVisible = false
+      this.tableData3.push(obj)
+    },
+    closeIt2(arr) {
+      if (arr.length === 0) {
+        this.$notify({
+          title: '警告',
+          message: '主机名已存在',
+          type: 'warning'
+        })
+      } else {
+        // 遍历数组
+        arr.forEach((value) => {
+          const curIndexed = this.tableData3.findIndex((item) => {
+            return value.hostname === item.hostname
+          })
+          if (curIndexed > -1) {
+            this.$notify({
+              title: '警告',
+              message: '主机名已存在，请重新选择',
+              type: 'warning'
+            })
+          } else {
+            this.tableData3.push(value)
+          }
+        })
+      }
+      this.dialogTableVisible = false
+    },
+    bringData() {
+      // 从后端获取数据
+      bringTableData3().then(response => {
+        this.tableData3 = response.data.tableData3
+      }).catch(err => {
+        console.log('err===============', err)
+      })
+    },
+    deleteRow({ $index }) {
+      this.$confirm('确定删除当前主机名吗？', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+        .then(() => {
+          this.tableData3.splice($index, 1)
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          })
+        })
+    },
+    shut() {
+      this.dialogFormVisible = false
+    },
+    shut2() {
+      this.dialogTableVisible = false
     }
   }
 }
+
 </script>
-<style>
+
+<style scoped>
 
 </style>
