@@ -18,12 +18,22 @@
         prop="hostname"
         label="主机名"
         width="200"
-      />
+      >
+        <template slot-scope="{row}">
+          <el-button type="text" @click="addClick(row)">{{ row.hostname }} </el-button>
+        </template>
+      </el-table-column>
       <el-table-column
         prop="condition"
         label="状态"
         width="200"
-      />
+      >
+        <template slot-scope="{row}">
+          <span v-if="row.condition==='开机'"> <i class="el-icon-success" />{{ row.condition }} </span>
+          <span v-if="row.condition==='关机'"> <i class="el-icon-error" />{{ row.condition }} </span>
+          <span v-if="row.condition==='待机'"> <i class="el-icon-warning" />{{ row.condition }} </span>
+        </template>
+      </el-table-column>
       <el-table-column
         prop="username"
         label="用户名"
@@ -47,6 +57,7 @@
       v-if="dialogFormVisible"
       :dialog-form-visible.sync="dialogFormVisible"
       :row-data="curRow"
+      :is-modify="isModify"
       @closeIt="closeIt"
       @shut="shut"
     />
@@ -111,13 +122,22 @@ export default {
           })
       }
     },
-    addClick() {
-      this.curRow = {
-        id: new Date().getTime(),
-        hostname: '',
-        username: '',
-        condition: ''
+    addClick(row) {
+      if (row) {
+        // 取到row值,打开编辑页面
+        this.isModify = false
+        this.curRow = Object.assign({}, row)
+      } else {
+        // 为空值,打开增加页面
+        this.isModify = true
+        this.curRow = {
+          id: new Date().getTime(),
+          hostname: '',
+          username: '',
+          condition: ''
+        }
       }
+
       this.dialogFormVisible = true
     },
     handleChoose() {
@@ -187,5 +207,13 @@ export default {
 </script>
 
 <style scoped>
-
+.el-icon-success{
+  color: #71da1c;
+}
+.el-icon-error{
+  color: #c00d0b;
+}
+.el-icon-warning{
+  color: #dac124;
+}
 </style>

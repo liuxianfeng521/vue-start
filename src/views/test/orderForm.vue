@@ -1,11 +1,11 @@
 <template>
   <div>
     <el-dialog
-      title="新增主机名"
+      :title="isModify?'新增主机名':'查看主机详情'"
       :visible.sync="visible"
       @close="close()"
     >
-      <el-form ref="ruleForm" :model="rowData" :rules="rules" class="demo-ruleForm">
+      <el-form ref="ruleForm" :model="rowData" :disabled="!isModify" :rules="rules" class="demo-ruleForm">
         <el-form-item label="主机名" prop="hostname" :label-width="formLabelWidth">
           <el-input v-model="rowData.hostname" auto-complete="off" />
         </el-form-item>
@@ -24,7 +24,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm()">确认</el-button>
+        <el-button v-if="isModify" type="primary" @click="submitForm()">确认</el-button>
         <el-button @click="close()">取消</el-button>
       </div>
     </el-dialog>
@@ -43,6 +43,12 @@ export default {
       type: Object,
       default() {
         return {}
+      }
+    },
+    isModify: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

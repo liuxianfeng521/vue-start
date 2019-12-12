@@ -24,7 +24,11 @@
           prop="condition"
           label="状态"
           width="200"
-        />
+        >
+          <template slot-scope="{row}">
+            <span> <i class="el-icon-error" /> {{ row.condition }} </span>
+          </template>
+        </el-table-column>
         <el-table-column
           prop="username"
           label="用户名"
@@ -87,5 +91,7 @@ export default {
 </script>
 
 <style scoped>
-
+.el-icon-error{
+  color: #c00d0b;
+}
 </style>
