@@ -20,6 +20,10 @@ import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
 
+import 'echarts/map/js/world.js'
+import 'echarts/map/js/china.js'
+import 'echarts/extension-src/bmap/bmap.js'
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
