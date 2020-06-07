@@ -111,13 +111,26 @@ export const constantRoutes = [
     path: '/profile',
     component: Layout,
     redirect: '/profile/index',
-    hidden: true,
+    hidden: false,
     children: [
       {
         path: 'index',
         component: () => import('@/views/profile/index'),
         name: 'Profile',
         meta: { title: 'profile', icon: 'user', noCache: true }
+      }
+    ]
+  },{
+    path: '/echarts',
+    component: Layout,
+    redirect: '/echarts/index',
+    hidden: false,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/echarts/index'),
+        name: 'Echarts',
+        meta: { title: 'echarts', icon: 'user', noCache: true }
       }
     ]
   }
