@@ -13,6 +13,7 @@ import router from './router'
 
 import i18n from './lang' // internationalization
 import './icons' // icon
+import './views/echarts/echarts-map/mapJson' // 导入 mapJson 数据
 import './permission' // permission control
 import './utils/error-log' // error log
 
@@ -20,6 +21,7 @@ import * as filters from './filters' // global filters
 
 import 'echarts/map/js/world.js'
 import 'echarts/map/js/china.js'
+import 'echarts/extension-src/bmap/bmap.js'
 import 'echarts/extension-src/bmap/bmap.js'
 
 /**
