@@ -119,17 +119,17 @@ export const constantRoutes = [
         meta: { title: 'profile', icon: 'user', noCache: true }
       }
     ]
-  },
-  {
-    path: '/echart',
+  },{
+    path: '/echarts',
     component: Layout,
-    redirect: '/echart/china',
+    redirect: '/echarts/index',
+    hidden: false,
     children: [
       {
-        path: 'china',
-        component: () => import('@/views/echart/china'),
-        name: 'China',
-        meta: { title: 'china', icon: 'user', noCache: true }
+        path: 'index',
+        component: () => import('@/views/echarts/index'),
+        name: 'Echarts',
+        meta: { title: 'echarts', icon: 'user', noCache: true }
       }
     ]
   }
